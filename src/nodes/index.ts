@@ -4,17 +4,21 @@ import { AppNode } from "./types";
 
 export const initialNodes: AppNode[] = [
   {
-    id: "a",
+    id: "pokedex",
     type: "input",
     position: { x: 0, y: 0 },
-    data: { label: "step 1" },
+    data: { label: "Pokédex (Select a Pokemon)" },
   },
-  { id: "c", position: { x: 100, y: 100 }, data: { label: "step 2" } },
   {
-    id: "d",
+    id: "pokemon-details",
+    position: { x: 100, y: 100 },
+    data: { label: "Pokémon Details" },
+  },
+  {
+    id: "pokemon-moves",
     type: "output",
     position: { x: 0, y: 200 },
-    data: { label: "step 3" },
+    data: { label: "Pokémon Moves" },
   },
 ];
 
