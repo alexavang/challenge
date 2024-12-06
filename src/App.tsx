@@ -22,7 +22,7 @@ export default function App() {
   const [isPanelOpen, setIsPanelOpen] = useState(false);
 
   const onConnect: OnConnect = useCallback(
-    (connection) => setEdges((edges) => addEdge(connection, edges)),
+    (connection) => setEdges((edges) => addEdge({...connection, animated: true}, edges)),
     [setEdges]
   );
 
