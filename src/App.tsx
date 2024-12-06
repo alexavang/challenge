@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 import {
   ReactFlow,
   MiniMap,
+  Controls,
   Background,
   addEdge,
   useNodesState,
@@ -57,6 +58,7 @@ export default function App() {
         onClose={() => setIsPanelOpen(false)}
       />
       <MiniMap nodeColor={nodeColor} nodeStrokeWidth={3} zoomable pannable />
+      <Controls />
     </ReactFlow>
   );
 }
