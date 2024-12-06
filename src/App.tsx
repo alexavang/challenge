@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
 import {
   ReactFlow,
+  MiniMap,
   Background,
   addEdge,
   useNodesState,
@@ -26,6 +27,17 @@ export default function App() {
     [setEdges]
   );
 
+  const nodeColor = (node) => {
+    switch (node.type) {
+      case 'input':
+        return '#ffb4b4';
+      case 'output':
+        return '#e6cdcf';
+      default:
+        return '#ff4040';
+    }
+  };
+
   return (
     <ReactFlow
       nodes={nodes}
@@ -44,6 +56,7 @@ export default function App() {
         isOpen={isPanelOpen}
         onClose={() => setIsPanelOpen(false)}
       />
+      <MiniMap nodeColor={nodeColor} nodeStrokeWidth={3} zoomable pannable />
     </ReactFlow>
   );
 }
